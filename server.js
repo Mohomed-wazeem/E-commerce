@@ -1,10 +1,22 @@
 const express = require('express');
 
-const app = express()
+const app = express();
 
-app.get('/',(re,res) => {
-    res.send('THis is from backend')
+var dbconnect = require('./db');
+
+const productRoutes = require('./routes/productsRoute');
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+
+app.use('/api/products', productRoutes); 
+
+app.get('/',(req,res) => {
+    res.send('This is from backend')
 });
 
-const port = 5000;
-app.listen(port,() => console.log(`server is started`))
+app.listen(5000, () => {
+    console.log("Server running on port 5000");
+  });
+  
+

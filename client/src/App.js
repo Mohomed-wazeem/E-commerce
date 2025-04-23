@@ -5,6 +5,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { ProductDes } from './pages/ProductDes';
 import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
+import { CartPage } from './pages/CartPage';
 
 function App() {
   return (
@@ -14,6 +18,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/product/:id' element={<ProductDes />} />
+          <Route path='/cart' element={<CartPage/>} />
+
         </Routes>
       </BrowserRouter>
     </div>

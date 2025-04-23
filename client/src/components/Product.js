@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Rating from 'react-rating';
+import ReactStars from "react-rating-stars-component";
 
 export const Product = ({ product }) => {
   return (
-    <div className='col-md-3 mb-4'>
+    <div className='col-md-3 mb-4 mt-4'>
       <div className='card h-100 shadow-sm border-0'>
-        <Link to={`product/${product.id}`} className="text-decoration-none text-dark">
+        <Link to={`product/${product._id}`} className="text-decoration-none text-dark">
+
           <img
             src={product.image}
             className='card-img-top img-fluid p-3'
@@ -29,3 +31,5 @@ export const Product = ({ product }) => {
     </div>
   );
 };
+
+
